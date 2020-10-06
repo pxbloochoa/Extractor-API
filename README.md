@@ -23,7 +23,7 @@ docker run --name some-mysql -p 6033:3306 -e MYSQL_ROOT_PASSWORD=admin1928! -e M
 ```
 docker cp commons/createTablesAPI.sql some-mysql:/tmp/createTablesAPI.sql
 ```
-#### ejecución de base de datos inicial
+#### Ejecución de base de datos inicial
 ```
 docker exec -i some-mysql sh -c 'exec mysql -uroot -p"admin1928!" < /tmp/createTablesAPI.sql'
 ```
