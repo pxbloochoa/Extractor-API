@@ -24,8 +24,17 @@ public class ControllerData {
 	private GraphQL graphQL;
 
 	@SneakyThrows
-	@PostMapping
+	@PostMapping("/api/location")
 	public ResponseEntity<Object> station (@RequestBody String query){
+		JSONObject json = new JSONObject(query);
+		log.info(json.getString("query"));
+		ExecutionResult execute = graphQL.execute(ExecutionInput.newExecutionInput().query(json.getString("query")).build());
+		return new ResponseEntity<>(execute,HttpStatus.OK);
+	}
+
+	@SneakyThrows
+	@PostMapping("/api/townHall")
+	public ResponseEntity<Object> townHall (@RequestBody String query){
 		JSONObject json = new JSONObject(query);
 		log.info(json.getString("query"));
 		ExecutionResult execute = graphQL.execute(ExecutionInput.newExecutionInput().query(json.getString("query")).build());

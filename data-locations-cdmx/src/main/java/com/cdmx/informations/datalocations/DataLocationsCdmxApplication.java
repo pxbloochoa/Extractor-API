@@ -1,6 +1,7 @@
 package com.cdmx.informations.datalocations;
 
 import com.cdmx.informations.datalocations.repository.LocationRepository;
+import com.cdmx.informations.datalocations.repository.TownHallRepository;
 import com.cdmx.informations.datalocations.resolver.Query;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-//@ComponentScan({"com.cdmx.informations.datalocations.controller"})
 public class DataLocationsCdmxApplication {
 
 	public static void main(String[] args) {
@@ -19,6 +19,8 @@ public class DataLocationsCdmxApplication {
 	public Query query(LocationRepository LocationRepository) {
 		return new Query(LocationRepository);
 	}
+
+
 
 
 }

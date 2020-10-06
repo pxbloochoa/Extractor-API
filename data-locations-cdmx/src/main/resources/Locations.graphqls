@@ -4,8 +4,9 @@ type Query{
 	#input: vehicleID
 	getMetrobus(vehicleID: Int): LocationMetrobus
 
-
 	getAllMetrobus: [LocationMetrobus]
+
+
 }
 type LocationMetrobus{
 	vehicleID: Int
