@@ -1,0 +1,24 @@
+type Query{
+
+	#get one data metrobus with id
+	#input: vehicleID
+	getMetrobus(vehicleID: Int): LocationMetrobus
+
+
+	getAllMetrobus: [LocationMetrobus]
+}
+type LocationMetrobus{
+	vehicleID: Int
+	tripStartDate: String
+	dateUpdated: String
+	positionLongitude: String
+	tripScheduleRelationship: String
+	positionSpeed: String
+	vehicleCurrentStatus: String
+	tripRouteID: String
+	positionOdometer: String
+	vehicleLabel: String
+	tripID: String
+	positionLatitude: String
+	geographicPoint: String
+}
