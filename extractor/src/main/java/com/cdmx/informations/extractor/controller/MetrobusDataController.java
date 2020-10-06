@@ -2,25 +2,25 @@ package com.cdmx.informations.extractor.controller;
 
 
 import com.cdmx.informations.extractor.commons.Utilities;
-import com.cdmx.informations.extractor.consumers.LocationData;
-import com.cdmx.informations.extractor.consumers.Records;
-import com.cdmx.informations.extractor.interfaceServices.IMetrobusDataServices;
+import com.cdmx.informations.extractor.consumers.metrobus.LocationData;
+import com.cdmx.informations.extractor.consumers.metrobus.Records;
+import com.cdmx.informations.extractor.interfaceServices.DataServicesInterface;
 import com.cdmx.informations.extractor.model.MetrobusData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.sql.Timestamp;
 @ConfigurationProperties("app")
 @Slf4j
 @Service
-public class ExtractorController {
+public class MetrobusDataController {
 
 
-
-    @Autowired private IMetrobusDataServices iMetrobusDataServices;
+    @Qualifier("MetrobusDataServiceImpl")
+    @Autowired private DataServicesInterface iMetrobusDataServices;
 
 
     public void getDataLocation(RestTemplate restTemplate){
