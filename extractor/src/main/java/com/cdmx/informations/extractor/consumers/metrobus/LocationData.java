@@ -1,6 +1,7 @@
-package com.cdmx.informations.extractor.consumers;
+package com.cdmx.informations.extractor.consumers.metrobus;
 
 
+import com.cdmx.informations.extractor.consumers.Parameters;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,7 @@ public class LocationData {
 
     private int nhits;
     private Parameters parameters;
-    private Records [] records;
+    private Records[] records;
 
     public LocationData(){
 
