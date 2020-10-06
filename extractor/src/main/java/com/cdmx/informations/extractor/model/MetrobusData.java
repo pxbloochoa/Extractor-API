@@ -24,6 +24,9 @@ public class MetrobusData implements Serializable {
 
 
     @Id
+    @Column(name = "row_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long rowID;
     @Column(name = "vehicle_id")
     private int vehicleID;
     @Column(name = "trip_start_date")
