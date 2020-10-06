@@ -1,4 +1,4 @@
-package com.cdmx.informations.extractor.consumers;
+package com.cdmx.informations.extractor.consumers.metrobus;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
