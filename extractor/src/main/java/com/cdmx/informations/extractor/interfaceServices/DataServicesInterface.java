@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 @Service
-public interface IMetrobusDataServices {
+public interface DataServicesInterface {
 
-    List<MetrobusData> listDataMetrobus();
-    Optional<MetrobusData> listMetrobusDataID(int id);
-    int save(MetrobusData data);
+    List<Object> listData();
+    Optional<Object> listDataID(int id);
+    int save(Object data);
     void delete(int ID);
 
 }
