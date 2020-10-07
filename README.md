@@ -31,3 +31,56 @@ docker exec -i some-mysql sh -c 'exec mysql -uroot -p"admin1928!" < /tmp/createT
 ```
 docker exec -it some-mysql bash
 ```
+
+
+## Ejecucuón de la API 
+
+#### URL de conexión
+
+```
+http://localhost:8081/graphql
+
+```
+
+#### Ejemplo query GraphQL
+
+```
+
+{
+    getAllMetrobus{
+        vehicleID
+        tripStartDate
+        dateUpdated
+        positionLongitude
+        positionLatitude
+    }
+}
+
+```
+
+#### Ejemplo de Datos
+
+```
+
+{
+    "data": {
+        "getAllMetrobus": [
+            {
+                "vehicleID": 170,
+                "tripStartDate": null,
+                "dateUpdated": "2020-10-05 15:00:06",
+                "positionLongitude": "-99.18779754638672",
+                "positionLatitude": "19.3174991607666"
+            },
+            {
+                "vehicleID": 177,
+                "tripStartDate": "20200428",
+                "dateUpdated": "2020-10-05 15:00:06",
+                "positionLongitude": "-99.17749786376953",
+                "positionLatitude": "19.292600631713867"
+            }
+        ]
+    }
+}
+
+```
